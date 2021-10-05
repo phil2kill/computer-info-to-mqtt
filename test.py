@@ -23,59 +23,6 @@ for section in config.sections():
 
 
 
-#------------create the class        
-#config['topsecret.server.com'] = {}
-
-
-#------------define confine class  as a new funktion
-#topsecret = config['topsecret.server.com']
-
-
-#-------------uses function
-#topsecret['Port'] = '50022'     # mutates the parser
-#topsecret['ForwardX11'] = 'yes'  # same here
-
-
-
-
-
-#-------- connescts parameter FowardX11 to Default with the answer yes
-#config['DEFAULT']['ForwardX11'] = 'no'
-
-
-
-
-
-#--------write changes to config file
-#with open('ripple.ini', 'w') as configfile:
-#   config.write(configfile)
-
-
-
-
-
-
-
-#-----mqqt call back definition
-#def on_connect(client, userdata, flags, rc):
-#    print("funktion on connect")
-#    if rc==0:
-#      print("connected ok")
-#    else:
-#        print ("No connection")
-
-
-
-
-
-
-#-----instal mqtt
-#pip install -U paho.mqtt.client --use
-
-
-
-
-
 
 #--------paramters of mqtt server
 client = mqtt.Client(config ['mqtt']["client-id"])
@@ -106,9 +53,6 @@ while True:
     client.publish("my-topic", "Hello" )
     client.publish(config ['mqtt']["topic-pub"], config["component"] ["uuid"] )
 
-    print('before')
 
     time.sleep(3)
     
-    print ('after')
-    os.system("ping  google.com")
